@@ -11,7 +11,7 @@ export default class Root extends Component {
 
 
     render() {
-        let { store, history, todoslist, dispatch } = this.props
+        let { store, history, todos, dispatch } = this.props
 
     const dummyTodos = List([
         Map({ id: 0, idDone: true, text: 'make components' }),
@@ -24,7 +24,7 @@ export default class Root extends Component {
             <Provider store={store}>
                 <div>
                     <Router history={history} routes={routes} />
-                    <TodoList todoslist={dummyTodos} 
+                    <TodoList todos={dummyTodos} 
                             />
                     <DevTools />
                 </div>

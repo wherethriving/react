@@ -10,7 +10,8 @@ export function Todo(props) {
 }
 
 export function TodoList(props) {
-    const { todos,  toggleTodo, addTodo } = props;
+    const { toggleTodo, addTodo } = props;
+    const todos = props.todos;
 
     const onSubmit = (event) => {
         const input = event.target;

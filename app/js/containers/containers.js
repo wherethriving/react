@@ -4,9 +4,9 @@ import * as components from '../components/components'
 
 export const TodoList = connect(
     function mapStateToProps(state) {
-        const { todoslist } = state;
+        const todos = state.reducer.todos;
         return {
-            todoslist
+            todos 
         }
 
     },
