@@ -1,5 +1,5 @@
 import { List, Map } from 'immutable';
- import merge from 'lodash/merge'
+import * as TYPES from '../constants/ActionTypes' 
 
 
 const todos = List([
@@ -12,9 +12,9 @@ const initialState = {
 export default function reducer(state=initialState, action) {
 
     switch(action.type) {
-        case 'ADD_TODO':
+        case TYPES.ADD_TODO:
             return { todos : state.todos.push(Map(action.payload))}
-        case 'TOGGLE_TODO':
+        case TYPES.TOGGLE_TODO:
             return { todos: state.todos.map(t => {
                 if(t.get('id') === action.payload) {
                     return t.update('isDone', isDone => !isDone);

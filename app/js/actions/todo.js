@@ -1,8 +1,10 @@
+import * as TYPES from '../constants/ActionTypes' 
+
 const uid = () => Math.random().toString(34).slice(2);
 
 export function addTodo(text) {
     return {
-        type: 'ADD_TODO',
+        type: TYPES.ADD_TODO,
         payload: {
             id: uid(),
             idDone: false,
@@ -13,7 +15,7 @@ export function addTodo(text) {
 
 export function toggleTodo(id) {
     return {
-        type: 'TOGGLE_TODO',
+        type: TYPES.TOGGLE_TODO,
         payload: id
     };
 }

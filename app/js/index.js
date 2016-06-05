@@ -9,18 +9,11 @@ import Root from './containers/Root'
 
 import '../styles/todo.css'
 
-//const store = createStore(reducer);
 const store = configurateStore();
 const history = syncHistoryWithStore(browserHistory, store)
 
 render(
   <Root store={store} history={history} />,
-       
     
-  //<Route path='/' component={ TodoList }> 
-    //    <Route path='todo' component={ TodoList }/>
-    //</Route>
-  // <TodoList />
-  //</Provider>,
   document.getElementById('root')
 )
