@@ -1,8 +1,9 @@
 import { List, Map } from 'immutable';
 import * as TYPES from '../constants/ActionTypes' 
 
-
 const todos = List([
+    Map({ id: 0, isDone: true,  text: 'make components' }),
+    Map({ id: 1, isDone: false,  text: 'design components' })
 ]);
 
 const initialState = {

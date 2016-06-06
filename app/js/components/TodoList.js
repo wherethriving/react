@@ -1,17 +1,11 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import Todo from './Todo'
 
-export function Todo(props) {
-    const { todo } = props;
-    if(todo.isDone) {
-        return <strike>{todo.text}</strike>;
-    } else {
-        return <span>{todo.text}</span>;
-    }
-}
+export default class TodoList extends Component {
 
-export function TodoList(props) {
-    const { toggleTodo, addTodo } = props;
-    const todos = props.todos;
+    render () {
+
+    const {todos, toggleTodo, addTodo } = this.props;
 
     const onSubmit = (event) => {
         const input = event.target;
@@ -27,6 +21,7 @@ export function TodoList(props) {
 
     const toggleClick = id => event => toggleTodo(id);
 
+
     return (
         <div className='todo'>
             <input type='text' 
@@ -40,12 +35,19 @@ export function TodoList(props) {
                         key={t.get('id')}
                         onClick={toggleClick(t.get('id'))}
                     >
-                        <Todo todo={t.toJS()} />
+                            <Todo todo={t.toJS()} />
                     </li>
                 ))
                 }
             </ul>
         </div>
     );
+    }
+}
+
+TodoList.propTypes = {
+    todos       : PropTypes.object,
+    addTodo     : PropTypes.func,
+    toggleTodo  : PropTypes.func
 }
 

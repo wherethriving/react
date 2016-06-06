@@ -1,9 +1,11 @@
 import React from 'react'
 import { Route } from 'react-router'
-import { TodoList, Todo } from '../containers/containers'
+import TodoPage from '../containers/TodoPage'
 
 export default (
-    <Route path='/admin' component={ TodoList }>
-        <Route path="todo" component={ TodoList } />
+    <Route path='/admin' component={ TodoPage }>
+        <Route path="todo" component={ TodoPage } />
     </Route>
 )
+
+
