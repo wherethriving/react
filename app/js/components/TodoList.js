@@ -5,7 +5,7 @@ export default class TodoList extends Component {
 
     render () {
 
-    const {todos, toggleTodo, addTodo } = this.props;
+    const { data, todos, toggleTodo, addTodo } = this.props;
 
     const onSubmit = (event) => {
         const input = event.target;
@@ -40,6 +40,8 @@ export default class TodoList extends Component {
                 ))
                 }
             </ul>
+            Hello
+            {data.attrName}
         </div>
     );
     }

@@ -5,7 +5,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux';
 import  configurateStore from './store/configureStore'
-import Root from './containers/Root'
+import Root from './containers/common/Root'
 
 import '../styles/todo.css'
 

@@ -25,12 +25,18 @@ class TodoPage extends Component {
     }
 
    render() {
-        const { todos } = this.props;
-       
+        const { todo } = this.props;
+        const todos = todo.todos;
+        const data = todo.data;
+        console.log("==========");
+        console.log(todo);
         console.log(this.props);
+       
         return (
             <div>
-                <TodoList todos={todos}
+                <TodoList 
+                todos={ todos }
+                data = { data }
                 addTodo = { this.addTodo }
                 toggleTodo = { this.toggleTodo }
                     />
@@ -45,9 +51,11 @@ TodoPage.propTypes = {
 }
 
 function mapStateToProps(state) {
-    const todos = state.reducer.todos;
+    //const todos = state.todo.todos;
+    const todo = state.todo;
     return {
-        todos 
+        //todos, 
+        todo 
     }
 }
 
